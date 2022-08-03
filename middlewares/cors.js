@@ -3,10 +3,8 @@ const allowedCors = [
   'https://localhost:3000',
   'http://localhost:3001',
   'https://localhost:3001',
-  'http://mesto.ypraktikum.nomoredomains.work/',
-  'https://mesto.ypraktikum.nomoredomains.work/',
-  'http://mesto.ypraktikum.nomoredomains.work',
-  'https://mesto.ypraktikum.nomoredomains.work',
+  'http://movies.amyparktikum.nomoredomains.sbs/',
+  'https://movies.amyparktikum.nomoredomains.sbs/',
 ];
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';

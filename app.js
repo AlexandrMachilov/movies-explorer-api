@@ -11,7 +11,7 @@ const {
   signinValidation,
 } = require('./middlewares/validation');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-/* const cors = require('./middlewares/cors'); */
+const cors = require('./middlewares/cors');
 
 const { NODE_ENV, DB_URL } = process.env;
 const { PORT = 3000 } = process.env;
@@ -32,7 +32,7 @@ async function main() {
 
 main();
 
-/* app.use(cors); */
+app.use(cors);
 
 app.use(requestLogger);
 
