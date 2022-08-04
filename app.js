@@ -2,19 +2,14 @@ require('dotenv').config();
 const { errors } = require('celebrate');
 const express = require('express');
 const mongoose = require('mongoose');
-const { login, createUser } = require('./controllers/users');
 const ErrorNotFound = require('./errors/ErrorNotFound');
 const { auth } = require('./middlewares/auth');
 const errorHandler = require('./middlewares/errorHandler');
-const {
-  signupValidation,
-  signinValidation,
-} = require('./middlewares/validation');
+
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const cors = require('./middlewares/cors');
 
-const { NODE_ENV, DB_URL } = process.env;
-const { PORT = 3000 } = process.env;
+const { PORT = 3000, NODE_ENV, DB_URL } = process.env;
 
 const app = express();
 
@@ -36,8 +31,7 @@ app.use(cors);
 
 app.use(requestLogger);
 
-app.post('/signin', signinValidation, login);
-app.post('/signup', signupValidation, createUser);
+require('./routes/auth')(app);
 
 app.use(auth);
 

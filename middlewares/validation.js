@@ -22,7 +22,9 @@ const signupValidation = celebrate({
       .custom(emailValidation)
       .messages({ 'string.notEmail': 'Некорректный E-mail' }),
     password: Joi.string().required(),
-    name: Joi.string().min(2).max(30),
+    name: Joi.string().min(2).max(30).messages({
+      'string.empty': 'Поле name не может быть пустым',
+    }),
   }),
 });
 
