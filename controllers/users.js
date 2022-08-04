@@ -57,11 +57,6 @@ module.exports.editUser = (req, res, next) => {
       throw new ErrorNotFound(`Пользователь с id ${req.user._id} не найден`);
     })
     .then((user) => {
-      if (user.email) {
-        throw new ErrorConflict('Пользователь c данным email уже существует');
-      }
-    })
-    .then((user) => {
       res.send(user);
     })
     .catch((err) => {
