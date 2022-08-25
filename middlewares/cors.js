@@ -6,7 +6,7 @@ const allowedCors = [
   'http://movies.amyparktikum.nomoredomains.sbs/',
   'https://movies.amyparktikum.nomoredomains.sbs/',
   'https://movies.amyparktikum.nomoredomains.sbs',
-  'https://movies.amyparktikum.nomoredomains.sbs',
+  'http://movies.amyparktikum.nomoredomains.sbs',
 ];
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
